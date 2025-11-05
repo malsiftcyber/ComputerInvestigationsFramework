@@ -16,6 +16,16 @@
 
 ---
 
+<div align="center">
+
+⚠️ **WORK IN PROGRESS** ⚠️
+
+**This project is currently under active development.** The codebase is functional but not yet ready for production installations. An update will be added to this README when the project is ready for general use.
+
+</div>
+
+---
+
 ## Overview
 
 Computer Investigations Framework (CIF) is an open-source digital forensics platform designed for remote file system investigation. CIF provides features that you might find in commercial products, but is fully open-source:
