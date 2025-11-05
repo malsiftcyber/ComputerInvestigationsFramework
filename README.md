@@ -22,7 +22,7 @@ Computer Investigations Framework (CIF) is an open-source digital forensics plat
 
 - 🌐 **Web-based investigation dashboard** - Modern, intuitive interface for investigations
 - 🔌 **Lightweight endpoint agents** - Easy deployment on Windows, Linux, and macOS
-- 🔍 **EnCase-style forensic viewer** - Hex view, metadata, and search capabilities
+- 🔍 **Classic forensic interface** - Hex view, metadata, and search capabilities
 - ⚡ **Real-time file system browsing** - WebSocket-based live data access
 - 🏢 **Enterprise-ready** - Domain-aware agent tagging and management
 
@@ -32,7 +32,7 @@ Computer Investigations Framework (CIF) is an open-source digital forensics plat
 
 - **Agent Management**: View all registered agents with domain, computer name, and IP address tagging
 - **File System Browser**: Navigate remote file systems with breadcrumb navigation
-- **Hex Viewer**: EnCase-style hexadecimal file viewer with:
+- **Hex Viewer**: Classic forensic interface with hexadecimal file viewer featuring:
   - Offset display (hex addresses)
   - Hex and ASCII columns side-by-side
   - Search functionality within hex content
@@ -327,7 +327,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Inspired by Magnet Axiom and EnCase forensic tools
+- Inspired by Magnet Axiom and classic forensic investigation tools
 - Built with Flask, React, and Material-UI
 - Uses Socket.IO for real-time communication
 
