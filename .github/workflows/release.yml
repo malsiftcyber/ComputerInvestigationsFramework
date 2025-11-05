@@ -1,0 +1,77 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number (e.g., 0.1.0)'
+        required: true
+
+jobs:
+  build-windows-agent:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r agent/requirements-build.txt
+        pip install python-socketio psutil pywin32
+    
+    - name: Build standard agent
+      working-directory: agent
+      run: |
+        python -m PyInstaller --clean cif-agent.spec
+    
+    - name: Build kernel agent
+      working-directory: agent
+      run: |
+        python -m PyInstaller --clean cif-kernel-agent.spec
+    
+    - name: Upload agent artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: windows-agents
+        path: |
+          agent/dist/cif-agent.exe
+          agent/dist/cif-kernel-agent.exe
+        retention-days: 30
+    
+    - name: Create release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          agent/dist/cif-agent.exe
+          agent/dist/cif-kernel-agent.exe
+        draft: false
+        prerelease: false
+        body: |
+          ## Release ${{ github.ref_name }}
+          
+          ### Windows Agent Binaries
+          
+          - **cif-agent.exe** - Standard Windows agent
+          - **cif-kernel-agent.exe** - Windows kernel-level agent (requires admin)
+          
+          ### Installation
+          
+          Download the executable and run:
+          ```cmd
+          cif-agent.exe --server-url http://your-server:5000
+          ```
+          
+          See [Quick Start Guide](QUICKSTART.md) for more information.
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
