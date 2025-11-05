@@ -1,0 +1,65 @@
+# -*- mode: python ; coding: utf-8 -*-
+
+block_cipher = None
+
+# Collect hidden imports
+hiddenimports = [
+    'socketio',
+    'engineio',
+    'psutil',
+    'python_socketio',
+    'engineio.async_drivers',
+    'engineio.async_drivers.threading',
+]
+
+# Add Windows-specific imports if available
+import sys
+try:
+    import win32security
+    import win32api
+    hiddenimports.extend(['win32security', 'win32api', 'pywintypes'])
+except ImportError:
+    pass
+
+a = Analysis(
+    ['agent.py'],
+    pathex=[],
+    binaries=[],
+    datas=[],
+    hiddenimports=hiddenimports,
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=[],
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=block_cipher,
+    noarchive=False,
+)
+
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    [],
+    name='cif-agent',
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    runtime_tmpdir=None,
+    console=True,
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+    icon=None,
+)
+
+
