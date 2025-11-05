@@ -5,7 +5,7 @@
 This is an open-source digital forensics platform similar to Magnet Axiom, featuring:
 - Web-based investigation interface
 - Endpoint agents for remote file system access
-- EnCase-style forensic file viewer with hex view
+- Classic forensic file viewer with hex view
 - Real-time file system browsing
 
 ## Quick Start
@@ -58,7 +58,7 @@ cif-agent --server-url http://your-server-ip:5000
 
 1. **Agent Management Dashboard**: View all registered agents and their status
 2. **File System Browser**: Navigate remote file systems with breadcrumb navigation
-3. **Hex Viewer**: EnCase-style hexadecimal file viewer with:
+3. **Hex Viewer**: Classic forensic interface with hexadecimal file viewer featuring:
    - Offset display
    - Hex and ASCII columns
    - Search functionality

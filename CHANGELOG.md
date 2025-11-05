@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Windows kernel-level agent
 - Domain name detection and tagging
 - Computer name and IP address collection
-- EnCase-style hex viewer
+- Classic forensic interface hex viewer
 - File system browser with breadcrumb navigation
 - Metadata display panel
 - Real-time WebSocket communication
