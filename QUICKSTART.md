@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is an open-source digital forensics platform similar to Magnet Axiom, featuring:
+This is an open-source digital forensics platform featuring capabilities you might find in commercial products:
 - Web-based investigation interface
 - Endpoint agents for remote file system access
 - Classic forensic file viewer with hex view

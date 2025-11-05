@@ -18,7 +18,7 @@
 
 ## Overview
 
-Computer Investigations Framework (CIF) is an open-source digital forensics platform designed for remote file system investigation. Similar to Magnet Axiom but fully open-source, CIF provides:
+Computer Investigations Framework (CIF) is an open-source digital forensics platform designed for remote file system investigation. CIF provides features that you might find in commercial products, but is fully open-source:
 
 - 🌐 **Web-based investigation dashboard** - Modern, intuitive interface for investigations
 - 🔌 **Lightweight endpoint agents** - Easy deployment on Windows, Linux, and macOS
@@ -327,7 +327,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Inspired by Magnet Axiom and classic forensic investigation tools
+- Inspired by classic forensic investigation tools and commercial digital forensics platforms
 - Built with Flask, React, and Material-UI
 - Uses Socket.IO for real-time communication
 
